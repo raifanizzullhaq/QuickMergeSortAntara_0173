@@ -41,3 +41,50 @@ void swap(int x, int y) // Membuat prosedur swap dengan parameter x, y bertipe d
     arr[y] = temp; // Mengisi arr indeks y dengan variabel temporary
     mov_count++; // Increment variabel mov_count
 }
+
+void q_sort(int low, int high) // Membuat prosedur q_sort dengan parameter low, high bertipe data integer
+{
+    int temp; // Deklarasi variabel temporary
+    int pivot, i, j; // Deklarasi variabel pivot, i, dan j
+
+    if (low >= high) // Jika low lebih besar dari high
+    {
+        return; // Alur mengembalikan nilai
+    }
+
+    pivot = arr[low]; // Mengisi variabel pivot dengan array indeks low
+    i = low + 1; // Mengisi variabel i dengan low + 1
+    j = high; // Mengisi variabel j dengan high
+
+    while (i <= j) // Looping selama i <= j
+    {
+        // Mencari elemen array yang lebih besar dari pivot
+        while ((arr[i] <= pivot) && (i <= high)) // Looping selama arr[i] <= pivot dan i <= high
+        {
+            i++; // Increment variabel i
+            cmp_count++; // Increment variabel cmp_count
+        }
+        cmp_count++; // Increment variabel cmp_count
+
+        // Mencari elemen array yang lebih kecil atau sama dengan pivot
+        while ((arr[j] > pivot) && (j >= low))
+        {
+            j--; // Decrement variabel j
+            cmp_count++; // Increment variabel cmp_count
+        }
+        cmp_count++; // Increment variabel cmp_count
+
+        if (i < j) // Jika indeks i kurang dari j
+        {
+            swap(i, j); // Tukar elemen pada indeks i dengan elemen pada indeks j
+        }
+    }
+
+    if (low < j) // Jika indeks low kurang dari j
+    {
+        swap(low, j); // Tukar elemen pivot dengan elemen di indeks j
+    }
+
+    q_sort(low, j - 1); // Memanggil rekursif prosedur q_sort untuk mengurutkan sub array sebelah kiri
+    q_sort(j + 1, high); // Memanggil rekursif prosedur q_sort untuk mengurutkan sub array sebelah kanan
+}
