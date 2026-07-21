@@ -33,3 +33,11 @@ void input() // Prosedur untuk input
         cin >> arr[i];
     }
 }
+
+void swap(int x, int y) // Membuat prosedur swap dengan parameter x, y bertipe data integer
+{
+    int temp = arr[x]; // Mengisi variabel temporary dengan arr indeks x
+    arr[x] = arr[y]; // Mengisi arr indeks x dengan arr indeks y
+    arr[y] = temp; // Mengisi arr indeks y dengan variabel temporary
+    mov_count++; // Increment variabel mov_count
+}
