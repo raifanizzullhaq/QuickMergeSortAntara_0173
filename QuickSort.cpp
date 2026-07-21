@@ -88,3 +88,18 @@ void q_sort(int low, int high) // Membuat prosedur q_sort dengan parameter low, 
     q_sort(low, j - 1); // Memanggil rekursif prosedur q_sort untuk mengurutkan sub array sebelah kiri
     q_sort(j + 1, high); // Memanggil rekursif prosedur q_sort untuk mengurutkan sub array sebelah kanan
 }
+
+void output() // Pembuatan prosedur output
+{
+    cout << "\n-----------------------" << endl; // Menampilkan bentuk
+    cout << "  Inputkan Isi element array  " << endl; // Menampilkan teks
+    cout << "-----------------------" << endl;
+
+    for (int i = 0; i < n; i++) // Looping untuk menampilkan elemen array yang telah di urutkan
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << "\nJumlah perbandingan : " << cmp_count << endl; // Menampilkan jumlah perbandingan didalam algoritma
+    cout << "Jumlah pergerakan data : " << mov_count << endl; // Menampilkan jumlah pergeseran data
+}
