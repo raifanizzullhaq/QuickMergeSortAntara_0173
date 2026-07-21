@@ -103,3 +103,27 @@ void output() // Pembuatan prosedur output
     cout << "\nJumlah perbandingan : " << cmp_count << endl; // Menampilkan jumlah perbandingan didalam algoritma
     cout << "Jumlah pergerakan data : " << mov_count << endl; // Menampilkan jumlah pergeseran data
 }
+
+int main()
+{
+    char ch;
+
+    do
+    {
+        input(); // Memanggil prosedur input
+        q_sort(0, n - 1); // Memanggil prosedur input
+        output(); // Memanggil prosedur input
+        cout << "\nIngin melanjutkan (y/t) : "; // Akses untuk memilih mengulang atau berhenti
+        cin >> ch;
+
+        if (ch == 't' || ch == 'T') // Jika memasukan tanggapan T atau t maka program berhenti
+        {
+            break;
+        }
+
+        system("pause");
+        system("cls");
+    } while (true);
+
+    return 0;
+}
