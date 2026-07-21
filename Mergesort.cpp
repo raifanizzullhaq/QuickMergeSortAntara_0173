@@ -21,3 +21,16 @@ void input() //membuat prosedur input
         {
             cout << "\nmaksimal panjang array adalah 20";
         }
+    }
+    cout << "\n--------------" << endl; //display untuk 
+    menampilkan permintaan mengisi index array
+    cout << "\ninputkan isi element array" << endl;
+    cout << "\n--------------" << endl;
+
+    for (int i = 0; i < n; i++) //looping untuk mengisi index array
+    sampai index ke n-1
+{
+    cout <<  "array index ke- " << i << " : ";
+    cin >> arr{i};
+
+}    
